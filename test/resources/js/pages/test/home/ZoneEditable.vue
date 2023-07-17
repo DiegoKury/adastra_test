@@ -150,23 +150,15 @@ export default {
     deleteDistribution(index) {
       this.form.distributions.splice(index, 1);
     },
-    // New method for checking for errors in real time
-    validateName() {
-      // Reset name error
-      this.error = "";
+    
+    // Modified save method
+    async save() {
 
       // Error check 1: Validate the zone name does not have more than one space between each word
       if (/\s{2,}/.test(this.form.name)) {
         this.error =
           "The zone name cannot have more than one space between each word";
-      }
-    },
-    
-    // Modified save method
-    async save() {
-      // Check if there is an active error
-      if (this.error !== "") {
-        return;
+          return;
       }
 
       // Error check 2: Validate the zone name is not empty
