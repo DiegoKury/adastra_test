@@ -13,7 +13,7 @@ class Command(BaseCommand):
         self.create_zones('D', [15, 15, 5, 10, 55])
 
     def create_zones(self, name, percentages):
-        zone = Zone.objects.create(name=name)
+        zone = Zone.objects.create(name=name, updated_at='')
 
         for percentage in percentages:
             Distribution.objects.create(zone=zone, percentage=percentage)

@@ -14,4 +14,4 @@ class ZoneSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Zone
-        fields = ['id', 'name', 'distributions']
+        fields = ['id', 'name', 'distributions', 'updated_at']

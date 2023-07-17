@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 from test import views as test_views
+from zones.api import views
 
 urlpatterns = [
     path('', test_views.home),
     path('admin/', admin.site.urls),
     path('api/zones', include(('zones.api.urls', 'zones'), namespace='api_zones')),
+    path('api/put', views.edit), # New path added
 ]
